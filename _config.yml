@@ -6,15 +6,15 @@ gems:
 # Site settings
 title: "Hi my name is Amr"
 description: > # this means to ignore newlines until "email:"
-   My goal is to share my Swift knowledge with the world
+   My goal is to share my software development knowledge with the world
 
-email: amr.raafat.omran@gmai.com
+email: amr.raafat.omran@gmail.com
 #blog logo
-logo: "/assets/images/df_logo.jpg"
+logo: "/assets/images/ao_logo.jpg"
 float_logo: true # true, false (default)
 
 # blog cover
-cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
+cover: "/assets/images/background_image.jpg"
 
 name: 'Amr Omran'
 author: 'Amr Omran'
