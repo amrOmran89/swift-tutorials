@@ -11,7 +11,7 @@ description: > # this means to ignore newlines until "email:"
 email: amr.raafat.omran@gmail.com
 #blog logo
 logo: "/assets/images/ao_logo.jpg"
-float_logo: true # true, false (default)
+float_logo: false # true, false (default)
 
 # blog cover
 cover: "/assets/images/background_image.jpg"
@@ -34,17 +34,24 @@ baseurl: "/swift-tutorials"
 social:
   - icon:	linkedin
     url:	https://www.linkedin.com/in/amr-omran-61a166341/
-    desc: Follow me on twitter
-    share_url: 
-    share_title: ?text=
-    share_link: "&amp;url="
+    desc:	Share on LinkedIn
+    share_url:	https://www.linkedin.com/sharing/share-offsite/?
+    share_title:	null
+    share_link:	url=
+
+  - icon:	copy
+    url:	#
+    desc:	Copy link
+    share_url:	null
+    share_title:	null
+    share_link:	null
 
   - icon:	github
     url:	https://github.com/amrOmran89
     desc:	Fork me on github
-    share_url:
-    share_title:
-    share_link:
+    share_url:	null
+    share_title:	null
+    share_link:	null
 
 #  - icon:	google-plus
 #    url:	https://google.com/???

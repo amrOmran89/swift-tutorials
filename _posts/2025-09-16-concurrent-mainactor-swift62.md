@@ -52,28 +52,39 @@ import SwiftUI
 
 // If your project uses default-isolation MainActor, you can omit @MainActor below.
 @MainActor
-final class ArticlesViewModel: ObservableObject {
-    @Published private(set) var articles: [Article] = []
-    @Published private(set) var isLoading: Bool = false
+@Observable
+class ArticlesViewModel {
+    private(set) var articles = [Article]()
+    private(set) var isLoading = false
 
     func load() async {
         isLoading = true
         defer { isLoading = false }
 
-        // 1) Fetch (typically fine off the main actor)
-        let items = try? await API.fetchArticles()
+        do {
+            let items = try await API().fetchArticles()
+            articles = items
+        } catch {
+            print(error)
+        }
+    }
+}
 
-        // 2) CPU-heavy post-processing off the main actor
-        let processed: [Article] = await Task.detached(priority: .userInitiated) {
-            (items ?? []).sorted(by: { $0.date > $1.date })
-        }.value
+class API {
 
-        // 3) Publish results back on the main actor (we're already @MainActor here)
-        articles = processed
+    @concurrent func fetchArticles() async throws -> [Article] {
+        guard let url = URL(string: "api/articles") else {
+            throw URLError(.badURL)
+        }
+        let (data, _) = try await URLSession.shared.data(from: url)
+
+        let articles = try JSONDecoder().decode(Article.self, from: data)
+        return articles
     }
 }
 
 struct ArticlesView: View {
+
     @StateObject private var viewModel = ArticlesViewModel()
 
     var body: some View {
@@ -88,42 +99,6 @@ struct ArticlesView: View {
 }
 {% endhighlight %}
 
-### `.task(id:)` to rerun work when inputs change
-
-{% highlight swift %}
-struct SearchView: View {
-    @StateObject private var viewModel = ArticlesViewModel()
-    @State private var query: String = ""
-
-    var body: some View {
-        VStack {
-            TextField("Search", text: $query)
-            List(viewModel.articles) { article in
-                Text(article.title)
-            }
-        }
-        // Re-runs when `query` changes, cancelling the previous task
-        .task(id: query) {
-            await viewModel.search(query: query)
-        }
-    }
-}
-
-extension ArticlesViewModel {
-    func search(query: String) async {
-        guard !query.isEmpty else {
-            articles = []
-            return
-        }
-
-        let items = try? await API.searchArticles(query)
-        let processed: [Article] = await Task.detached(priority: .userInitiated) {
-            (items ?? []).filter { $0.title.localizedCaseInsensitiveContains(query) }
-        }.value
-        articles = processed
-    }
-}
-{% endhighlight %}
 
 ## Default actor isolation in practice
 

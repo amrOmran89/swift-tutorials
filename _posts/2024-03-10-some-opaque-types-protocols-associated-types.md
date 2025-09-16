@@ -1,5 +1,5 @@
 ---
-title: "Understand some keyword in SwiftUI"
+title: "Understand the some keyword in SwiftUI"
 date: 2024-03-10
 layout: post
 categories: [Swift, Generics, Protocols]
