@@ -140,6 +140,15 @@ body
     border-bottom: 1px solid #f2f2f0
     &:last-child
       border-bottom: 0px
+    // Hover/focus animation for post list items
+    .article-item
+      padding: $rs
+      transition: transform 200ms ease, box-shadow 200ms ease
+      will-change: transform
+    &:hover .article-item,
+    &:focus-within .article-item
+      transform: translateY(-4px)
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08)
     .post-title
       letter-spacing: -0.02em
       font-weight: 700
@@ -169,6 +178,10 @@ body
         text-decoration: none
         &:hover
           text-decoration: underline
+
+@media (prefers-reduced-motion: reduce)
+  .content article .article-item
+    transition: none
 .container.featured
   padding-bottom: 40px
 

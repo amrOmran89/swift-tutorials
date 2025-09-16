@@ -4,14 +4,17 @@ title: About
 permalink: /about/
 ---
 
-A medium inspired Jekyll blog theme. The basic idea came from the Ghost theme 
-[Readium 2.0](http://www.svenread.com/readium-ghost-theme/). I use mediator on my own blog [The Base](blog.base68.com).
+![Author](/assets/images/author.jpg)
 
-You can **download** the theme here:
-[https://github.com/dirkfabisch/mediator](https://github.com/dirkfabisch/mediator) 
+Hi, I'm Amr Omran.
 
-You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+I'm an iOS engineer who loves building clean, pragmatic apps with Swift and SwiftUI. I write about real‑world patterns, concurrency, testing, and architecture — with clear, copy‑paste‑ready examples.
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+You'll find tutorials and notes here on:
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+- SwiftUI fundamentals, layout, and modifiers
+- Concurrency (async/await, Task, MainActor)
+- App architecture and best practices
+- Localization and building for both English (LTR) and Arabic (RTL)
+
+I publish in English and Arabic when it helps more people. If a post sparks an idea or you spot something to improve, I'd love to hear your feedback.
