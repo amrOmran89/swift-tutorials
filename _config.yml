@@ -6,7 +6,7 @@ gems:
 # Site settings
 title: "Hi my name is Amr"
 description: > # this means to ignore newlines until "email:"
-   My goa
+   My goal is to share my Swift knowledge with the world
 
 email: amr.raafat.omran@gmai.com
 #blog logo
@@ -22,8 +22,8 @@ author_image: "/assets/images/author.jpg"
 
 paginate:	5
 
-url: "http://myblog.***.***" # the base hostname & protocol for your site
-baseurl: ""
+url: "https://amromran89.github.io"
+baseurl: "/swift-tutorials" 
 
 #fill in disqus shortname to use disqus
 #disqus: disqus-shortname
