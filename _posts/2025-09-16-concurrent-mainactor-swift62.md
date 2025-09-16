@@ -85,15 +85,14 @@ class API {
 
 struct ArticlesView: View {
 
-    @StateObject private var viewModel = ArticlesViewModel()
+    @State private var viewModel = ArticlesViewModel()
 
     var body: some View {
         List(viewModel.articles) { article in
             Text(article.title)
         }
-        // Kicks off the load when the view appears
         .task {
-            await viewModel.load()
+            await viewModel.load()  // Kicks off the load when the view appears
         }
     }
 }
