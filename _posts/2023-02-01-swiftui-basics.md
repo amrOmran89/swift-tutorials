@@ -1,6 +1,6 @@
 ---
 title: "SwiftUI Basics"
-date: 2025-09-15 10:00:00 +0200
+date: 2023-02-01 10:00:00 +0200
 categories: [Swift, SwiftUI]
 tags: [swift, swiftui, ios]
 layout: post

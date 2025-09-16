@@ -1,6 +1,6 @@
 ---
 title: "Mastering Optionals in Swift: From Basics to Best Practices"
-date: 2025-09-16
+date: 2024-01-01
 tags: [Swift, iOS, Optionals, Programming]
 layout: post
 ---

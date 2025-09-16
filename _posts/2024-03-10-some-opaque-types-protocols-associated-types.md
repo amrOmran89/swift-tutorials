@@ -1,6 +1,6 @@
 ---
 title: "Understand some keyword in SwiftUI"
-date: 2025-09-16
+date: 2024-03-10
 layout: post
 categories: [Swift, Generics, Protocols]
 ---

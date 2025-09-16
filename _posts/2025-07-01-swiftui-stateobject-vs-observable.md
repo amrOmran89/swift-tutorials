@@ -1,6 +1,6 @@
 ---
 title: "Understanding @StateObject vs @State with @Observable in SwiftUI"
-date: 2025-09-16
+date: 2025-07-01
 categories: [SwiftUI, iOS]
 tags: [swift, swiftui, ios]
 layout: post

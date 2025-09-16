@@ -1,6 +1,6 @@
 ---
 title: "Bilingual iOS: LTR and RTL (English and Arabic)"
-date: 2025-09-16 12:30:00 +0200
+date: 2024-08-27 12:30:00 +0200
 categories: [iOS, SwiftUI, UIKit, Localization]
 tags: [ios, swiftui, uikit, localization, rtl, ltr, arabic, english]
 layout: post

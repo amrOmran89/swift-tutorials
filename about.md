@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-![Author](/assets/images/author.jpg)
+![Author](/assets/images/author.JPEG)
 
 Hi, I'm Amr Omran.
 
