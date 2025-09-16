@@ -16,7 +16,6 @@ Before Swift 6.2, the main way to manage reference-type observable state was usi
 
 {% highlight swift %}
  import SwiftUI
- import Combine
 
  class Counter: ObservableObject {
     @Published var value: Int = 0
@@ -51,7 +50,6 @@ Swift 6.2 introduced the `@Observable` macro, which works with structs and allow
 
 {% highlight swift %}
 import SwiftUI
-import Observation
 
 @Observable
 struct Counter {
@@ -87,43 +85,6 @@ struct CounterView: View {
 
 ---
 
-## Example Side-by-Side
-
-{% highlight swift %}
-// ObservableObject + StateObject
-class CounterClass: ObservableObject {
-    @Published var value: Int = 0
-}
-
-// Observable Macro + State
-@Observable
-struct CounterStruct {
-    var value: Int = 0
-}
-
-struct DemoView: View {
-    @StateObject private var counterClass = CounterClass()
-    @State private var counterStruct = CounterStruct()
-
-    var body: some View {
-        VStack(spacing: 20) {
-            VStack {
-                Text("Class Counter: \(counterClass.value)")
-                Button("Increment Class") {
-                    counterClass.value += 1
-                }
-            }
-            VStack {
-                Text("Struct Counter: \(counterStruct.value)")
-                Button("Increment Struct") {
-                    counterStruct.value += 1
-                }
-            }
-        }
-        .padding()
-    }
-}
-{% endhighlight %}
 
 This shows both approaches in the same view for comparison. The **class** version uses `@StateObject` and `@Published`, while the **struct** version uses `@Observable` and `@State`.
 
